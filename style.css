@@ -88,8 +88,8 @@ body{
 }
 
 .cta-button{
-  background:var(--yellow);
-  color:var(--dark-gray);
+  background:#FDC913;
+  color: #292929;
   padding:14px 36px;
   border:0;
   border-radius:50px;
@@ -201,7 +201,7 @@ body{
 }
 
 .card-accent{
-  color:#E63C3C;
+  color: #CE2829;
   font-weight:700;
 }
 
@@ -258,7 +258,7 @@ body{
 
 .card-button{
   background:#fff;
-  color:var(--red);
+  color:#CE2829;
   padding:12px 26px;
   border:0;
   border-radius:25px;
@@ -404,7 +404,7 @@ body{
 }
 
 .footer{
-  background:var(--dark-gray);
+  background: #292929;
   color:#fff;
   padding:64px 0 32px;
   min-height:var(--footer-h);
@@ -501,7 +501,7 @@ body{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  color:#cfcfcf;
+  color:#5F5F5F;
   font-size:.95rem;
 }
 
@@ -528,6 +528,12 @@ button:focus-visible,.card-button:focus-visible,.cta-button:focus-visible{
   .hero-section{
     background-position:center;
   }
+
+  .hero-title {
+    text-align: center;
+    line-height: 1.2;
+  }
+
   .content-section{
     width:100%;
     max-width:1220px;
@@ -537,13 +543,20 @@ button:focus-visible,.card-button:focus-visible,.cta-button:focus-visible{
   .cards-container{
     width:100%;
     height:auto;
+    display: flex;
+    flex-direction: column;
     grid-template-columns:1fr;
-    column-gap:0;
-    row-gap:20px;
+    align-items: center;
+    gap:20px;
+  }
+
+  .card-content{
+    align-items: center;
+    text-align: center; 
   }
 
   .card-square,.card-rect,.card-column{
-    width:100%;
+    width:min(100%, 531px);
     height:auto;
   }
 
@@ -553,13 +566,20 @@ button:focus-visible,.card-button:focus-visible,.cta-button:focus-visible{
 
   .category-tabs{
     width:100%;
+    justify-content: center;
   }
 
   .products-grid{
     width:100%;
     grid-template-columns:1fr;
     gap:20px;
+    justify-items: center;  
   }
+
+    .product-card{
+      width: min(100%, 340px); 
+      margin: 0 auto;
+    }
 
   .product-image{
     height:240px;
@@ -617,10 +637,135 @@ button:focus-visible,.card-button:focus-visible,.cta-button:focus-visible{
   }
 
 }
+
+@media (min-width: 769px) {
+  .logo-img{
+    margin-top: 60px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card .card-content{
+    align-items: flex-start;
+    text-align: left;
+  }
+
+.bg-kart1 .card-content{
+  margin: 64px 32px 32px 56px;
+}
+
+.bg-kart2{
+  align-items: center;
+}
+.bg-kart3{
+  align-items: center;
+}
+
+.bg-kart2 .card-content{
+  margin: 0 32px 0 20px;
+}
+
+.bg-kart3 .card-content{
+  margin: 0 32px 0 0px;
+}
+}
+
 @media (max-width:768px){
 
   .hero-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    white-space: pre-wrap;
     letter-spacing:1px;
+    font-size: clamp(3rem, 9vw, 6rem);
+    line-height: 1.1;
+    margin-bottom: 24px;
+  }
+
+  .cards-container {
+    align-items: flex-start;
+  }
+
+  .card-square,
+  .card-rect,
+  .card-column {
+    width: 100%;
+    max-width: 531px;
+  }
+
+.card-content {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.bg-kart2, .bg-kart3 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  min-height: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+ .bg-kart1 .card-content,
+  .bg-kart2 .card-content,
+  .bg-kart3 .card-content {
+    margin: 24px;                
+    align-items: flex-start;     
+    text-align: left;
+  }
+
+   .card.card-light.bg-kart3 .card-content { 
+    margin: 24px; 
+  }
+
+    .card-button { 
+      align-self: flex-start; 
+    }
+
+  .hero-title span{
+    display: block;
+  }
+
+  .hero-title br{
+    display: none;
+  }
+
+  .cta-button{
+    margin-top: 6px;
+    padding: 16px 38px;
+    font-size: 1rem;
+  }
+
+  .hero-section{
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 450px;
+    background-position: center bottom;
+
+  }
+
+  .hero-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin: 0 auto 32px;
+    text-align: center;
+  }
+
+  .logo-img{
+    max-width: 200px;
+    font-weight: 700;
+    margin-top: 70px;
+  }
+  
+  .hero-subtitle{
+    display: none;
   }
 
   .card-title{
@@ -631,8 +776,22 @@ button:focus-visible,.card-button:focus-visible,.cta-button:focus-visible{
     font-size:20px;
   }
 
+  .footer {
+    padding-left: 50px;
+  }
+
   .footer-bottom{
     font-size:.9rem;
+  }
+
+  .category-tabs {
+    width: 100%;
+    max-width: var(--cards-w);
+    margin: 0 auto 32px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap:20px;
   }
 
 }
